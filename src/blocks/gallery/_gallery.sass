@@ -1,0 +1,80 @@
+.gallery
+ width: 100%;
+ background: #F4C3CC;
+ box-sizing: border-box;
+ padding: 92px 90px 94px 90px;
+ position: relative;
+ &__btn
+  position: absolute;
+  top: 204px;
+  background: #FFFFFF;
+  width: 54px;
+  height: 74px;
+  font-size: 54px;
+  &>a
+   color: #000;
+   &:hover
+    text-decoration: none;
+  &--left
+   left: 0;
+   border-radius: 0px 54px 54px 0px;
+   padding-right: 8px;
+  &--right
+   right: 0;
+   border-radius: 54px 0px 0px 54px;
+   padding-left: 8px;
+ &__wrapper
+  width: 100%;
+  max-width: 1260px;
+  justify-content: space-between;
+ &__item
+  width: 100%;
+  max-width: 390px;
+ &__tag
+  display: inline-block;
+  padding: 8px 15px;
+  background: #FFFFFF;
+  border-radius: 30px;
+  margin: 30px 0 0 0;
+  font-family: Roboto;
+  font-weight: normal;
+  font-size: 13px;
+  letter-spacing: 2.08px;
+  text-transform: uppercase;
+  color: #EF3340;
+ &__title
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 26px;
+  letter-spacing: 4.16px;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 15px 0 0 0;
+  width: 100%;
+  max-width: 352px;
+ &__link
+  display: block;
+  font-family: Roboto;
+  font-weight: normal;
+  font-size: 15px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 15px 0 0 0;
+  position: relative;
+  &::after
+   position: absolute;
+   content: '';
+   display: block;
+   left: 0;
+   bottom: -6px;
+   width: 116px;
+   height: 15px;
+   background: url("../img/underline.png") center center/cover no-repeat;
+  &:hover
+   text-decoration: none;
+   color: lighten(#000, 30%);
+   &::after
+    display: none;
+
+
