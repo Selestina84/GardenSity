@@ -19,7 +19,7 @@
   max-width: 465px;
   padding: 0;
   list-style: none;
-  align-items: center;
+  margin: 0;
  &__item
   margin-right: 35px;
  &__link
@@ -59,10 +59,13 @@
   display: block;
   transition: all .4s ease;
   position: relative;
-  z-index: 9999;
+  z-index: 1;
   &:hover
    text-decoration: none;
    transform: scale(1.05);
+  &>img
+   width: 100%;
+   height: auto;
  &__pinkflower
   position: absolute;
   width: 100%;

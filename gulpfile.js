@@ -33,7 +33,8 @@ gulp.task('styles', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch("src/blocks/**/*.+(scss|sass|css)", gulp.parallel('styles'));
+    gulp.watch("src/*/**/*.+(scss|sass|css)", gulp.parallel('styles'));
+    gulp.watch("src/js/**/*.js").on('change', gulp.parallel('build-js'));
     gulp.watch("src/*.html").on('change', gulp.parallel('html'));
     gulp.watch("src/blocks/*/img/**/*").on('all', gulp.parallel('images'));
 });
@@ -43,7 +44,37 @@ gulp.task('html', function () {
         .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(gulp.dest(`${dist}/`));
 });
-
+gulp.task("build-js", () => {
+    return gulp.src("src/main.js")
+                .pipe(webpack({
+                    mode: 'development',
+                    output: {
+                        filename: 'main.js'
+                    },
+                    watch: false,
+                    devtool: "source-map",
+                    module: {
+                        rules: [
+                          {
+                            test: /\.m?js$/,
+                            exclude: /(node_modules|bower_components)/,
+                            use: {
+                              loader: 'babel-loader',
+                              options: {
+                                presets: [['@babel/preset-env', {
+                                    debug: true,
+                                    corejs: 3,
+                                    useBuiltIns: "usage"
+                                }]]
+                              }
+                            }
+                          }
+                        ]
+                      }
+                }))
+                .pipe(gulp.dest(`${dist}`))
+                .on("end", browserSync.reload);
+});
 
 gulp.task('images', function () {
     return gulp.src("src/blocks/*/img/**/*")
@@ -53,4 +84,4 @@ gulp.task('images', function () {
         .pipe(browserSync.stream());
 });
 
-gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'html', 'images'));
+gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'html','build-js', 'images'));
