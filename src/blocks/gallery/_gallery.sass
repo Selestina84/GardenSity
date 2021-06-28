@@ -3,16 +3,25 @@
  background: #F4C3CC;
  box-sizing: border-box;
  padding: 92px 90px 94px 90px;
+ overflow: hidden;
  position: relative;
- &__btn
-  top: 204px;
+ z-index: 0;
  &__wrapper
   width: 100%;
-  max-width: 1260px;
   justify-content: space-between;
+ &__btn
+  position: absolute;
+  top: 204px;
+  &--right
+   right: 0;
+  &--left
+   left: 0;
  &__item
   width: 100%;
   max-width: 390px;
+ &__img
+  width: 100%;
+  height: auto;
  &__tag
   display: inline-block;
   padding: 8px 15px;

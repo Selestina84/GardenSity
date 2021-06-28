@@ -32,13 +32,6 @@ gulp.task('styles', function() {
         .pipe(browserSync.stream());
 });
 
-gulp.task('watch', function() {
-    gulp.watch("src/*/**/*.+(scss|sass|css)", gulp.parallel('styles'));
-    gulp.watch("src/js/**/*.js").on('change', gulp.parallel('build-js'));
-    gulp.watch("src/*.html").on('change', gulp.parallel('html'));
-    gulp.watch("src/blocks/*/img/**/*").on('all', gulp.parallel('images'));
-});
-
 gulp.task('html', function () {
     return gulp.src("src/*.html")
         .pipe(htmlmin({ collapseWhitespace: true }))
@@ -62,7 +55,7 @@ gulp.task("build-js", () => {
                               loader: 'babel-loader',
                               options: {
                                 presets: [['@babel/preset-env', {
-                                    debug: true,
+                                   
                                     corejs: 3,
                                     useBuiltIns: "usage"
                                 }]]
@@ -72,7 +65,7 @@ gulp.task("build-js", () => {
                         ]
                       }
                 }))
-                .pipe(gulp.dest(`${dist}`))
+                .pipe(gulp.dest(`${dist}/`))
                 .on("end", browserSync.reload);
 });
 
@@ -82,6 +75,12 @@ gulp.task('images', function () {
         .pipe(imagemin())
         .pipe(gulp.dest(`${dist}/img`))
         .pipe(browserSync.stream());
+});
+gulp.task('watch', function() {
+    gulp.watch("src/*/**/*.+(scss|sass|css)", gulp.parallel('styles'));
+    gulp.watch("src/main.js").on('change', gulp.parallel('build-js'));
+    gulp.watch("src/*.html").on('change', gulp.parallel('html'));
+    gulp.watch("src/blocks/*/img/**/*").on('all', gulp.parallel('images'));
 });
 
 gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'html','build-js', 'images'));

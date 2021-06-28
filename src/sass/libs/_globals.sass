@@ -11,7 +11,6 @@
  text-transform: uppercase;
  color: #000000;
 .button
-  position: absolute;
   background: #FFFFFF;
   width: 58px;
   height: 74px;
@@ -19,15 +18,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  &>a
-   color: #000;
-   &:hover
-    text-decoration: none;
+  z-index: 11;
+  color: #000;
+  cursor: pointer;
   &--left
-   left: -4px;
    border-radius: 0px 54px 54px 0px;
    padding-right: 8px;
   &--right
-   right: -4px;
    border-radius: 54px 0px 0px 54px;
    padding-left: 8px;
