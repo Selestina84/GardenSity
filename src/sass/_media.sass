@@ -12,13 +12,21 @@
   &__item
    width: 32%;
   &__btn
-  
+ .letsgo
+   padding: 92px 60px 94px 60px;  
 @media (max-width: 1200px)
  .header
   &__img
    max-width: 500px;
  .gallery
   padding: 70px 40px;
+ .letsgo
+   padding: 70px 40px;
+   &__item
+    width: 100%; 
+   &__wrapperleft,
+   &__wrapperright
+     width: 47%;
 @media (max-width: 992px) 
  .header
   padding: 35px;
@@ -46,6 +54,17 @@
   width: 50px;
   height: 64px;
   font-size: 50px;
+ .letsgo
+  padding: 50px 30px;
+  &__title
+   font-size: 45px;
+   margin: 0 0 70px 0;
+  &__item
+   margin: 0 0 70px 0;
+  &__img
+    margin: 0 auto 50px auto;
+  &__subtitle
+    font-size: 28px;
 @media (max-width: 768px)
   .header
    padding: 25px;
@@ -89,6 +108,17 @@
     width: 40px;
     height: 50px;
     font-size: 40px;
+  .letsgo
+   padding: 50px 20px;
+   &__title
+    font-size: 40px;
+    margin: 0 0 40px 0;
+   &__item
+    margin: 0 0 40px 0;
+   &__img
+    margin: 0 auto 30px auto;
+   &__subtitle
+    font-size: 25px;
 @media (max-width: 576px)
   .header
    padding: 20px;
@@ -120,6 +150,21 @@
     letter-spacing: 1.8px;
     &::after
      width: 95px;
+  .letsgo
+   padding: 30px 20px;
+   &__title
+    font-size: 35px;
+    line-height: 45px;
+    letter-spacing: 4px;
+    margin: 0 0 30px 0;
+   &__item
+    margin: 0 0 30px 0;
+   &__img
+    margin: 0 auto 20px auto;
+   &__subtitle
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 3px;
 @media (max-width: 420px)
  .header
   padding: 15px;
@@ -154,6 +199,20 @@
    letter-spacing: 1.8px;
    &::after
     width: 95px;
+ .letsgo
+  padding: 20px;
+  flex-direction: column;
+  &__wrapperleft,
+  &__wrapperright
+   width: 100%;
+  &__item
+   width: 100%;
+  &__img
+   margin: 0 auto 20px auto;
+  &__subtitle
+   font-size: 20px;
+   line-height: 28px;
+   letter-spacing: 3px;
     
 
    
