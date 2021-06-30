@@ -24,6 +24,8 @@
    height: auto;
    &__link
     width: 24%; 
+ .footer
+   height: auto;
 @media (max-width: 1200px)
  .header
   &__img
@@ -42,6 +44,13 @@
    padding: 70px 40px;
  .around
    padding: 70px 0 40px 0;
+ .footer
+  &__wrap,
+  &__container
+   padding: 45px 90px;
+   height: auto;
+  &__container
+   grid-template: 1fr / minmax(98px,200px) minmax(11px,296px) minmax(90px,304px) minmax(219px,278px);
 @media (max-width: 992px) 
  .header
   padding: 35px;
@@ -105,6 +114,14 @@
   letter-spacing: 4px;
  .around
    padding: 50px 0 30px 0;
+ .footer
+  &__container,
+  &__wrap
+   padding: 45px 50px;
+  &__container
+   grid-template: 1fr / minmax(98px,150px) repeat(2,minmax(90px,250px))  minmax(180px,200px);
+  &__nav
+   padding: 25px 10px 25px 30px;
 @media (max-width: 768px)
   .header
    padding: 25px;
@@ -182,6 +199,10 @@
     width: 32%;
     &:last-child
      display: none;
+  .footer
+   &__container,
+   &__wrap
+    padding: 40px 30px;
 @media (max-width: 576px)
   .header
    padding: 20px;
@@ -271,6 +292,39 @@
       margin: 0 20px 0 0;
   .around
     padding: 30px 0 20px 0;
+  .footer
+   &__container,
+   &__wrap
+    padding: 30px 20px;
+   &__wrap
+    flex-direction: column;
+   &__titles
+    margin: 0 0 20px 0;
+   &__logo
+    max-width: 70px;
+   &__link
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 2px;
+    margin: 0 0 15px 0;
+   &__container
+    grid-template: repeat(2,1fr) / minmax(70px,100px) repeat(2,minmax(90px,250px));
+    grid-row-gap: 20px;
+   &__adress
+    grid-column: 1/4;
+   &__nav
+    padding: 25px 10px 25px 30px;
+   &__text,
+   &__tel
+    font-size: 16px;
+    line-height: 35px;
+   &__list
+    flex-wrap: wrap;
+   &__item
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 2px;
+    margin: 0 0 20px 0;
 @media (max-width: 420px)
  .header
   padding: 15px;
@@ -335,6 +389,15 @@
    width: 49%;
    &:nth-child(3)
     display: none;
+ .footer
+   &__logo
+    max-width: 50px;
+   &__container
+    grid-template: repeat(2,minmax(20px,110px)) / minmax(50px,70px) repeat(2,minmax(70px,150px));
+    grid-row-gap: 10px;
+   &__item
+    font-size: 12px;
+    margin: 0 0 10px 0;
     
 
    
