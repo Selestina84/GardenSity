@@ -13,7 +13,17 @@
    width: 32%;
   &__btn
  .letsgo
-   padding: 92px 60px 94px 60px;  
+  padding: 92px 60px 94px 60px; 
+ .modern
+  &__img
+   max-width: 58%;
+   object-fit: contain;
+  &__wrapper
+   max-width: 40%;
+ .around
+   height: auto;
+   &__link
+    width: 24%; 
 @media (max-width: 1200px)
  .header
   &__img
@@ -30,9 +40,8 @@
  .modern
    height: auto;
    padding: 70px 40px;
-   &__img
-     max-width: 550px;
-     object-fit: contain;
+ .around
+   padding: 70px 0 40px 0;
 @media (max-width: 992px) 
  .header
   padding: 35px;
@@ -73,10 +82,6 @@
     font-size: 28px;
  .modern
    padding: 50px 30px;
-   &__img
-     max-width: 58%;
-   &__wrapper
-     max-width: 40%;
    &__title
      margin: 40px 0 0 0;
    &__blue
@@ -98,6 +103,8 @@
   font-size: 40px;
   line-height: 50px;
   letter-spacing: 4px;
+ .around
+   padding: 50px 0 30px 0;
 @media (max-width: 768px)
   .header
    padding: 25px;
@@ -165,6 +172,16 @@
   .titlefs44
    font-size: 36px;
    line-height: 40px;
+  .around
+   &__wrapper
+    margin: 30px auto 0 auto;
+   &__subtitle,
+   &__follow
+    margin: 18px auto 0 auto;
+   &__link
+    width: 32%;
+    &:last-child
+     display: none;
 @media (max-width: 576px)
   .header
    padding: 20px;
@@ -246,6 +263,14 @@
   .titlefs44
    font-size: 30px;
    line-height: 35px;
+  .blueband
+    &__item
+      width: 250px;
+      margin: 0 25px 0 0;
+    &__img
+      margin: 0 20px 0 0;
+  .around
+    padding: 30px 0 20px 0;
 @media (max-width: 420px)
  .header
   padding: 15px;
@@ -300,6 +325,16 @@
    &__img,
    &__wrapper
      max-width: 100%;
+ .around
+  &__wrapper
+   margin: 20px auto 0 auto;
+  &__subtitle,
+  &__follow
+   margin: 15px auto 0 auto;
+  &__link
+   width: 49%;
+   &:nth-child(3)
+    display: none;
     
 
    
